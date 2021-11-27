@@ -3,6 +3,8 @@ A Hikari command handler for people who love ducks.
 
 Currently Hikari Duck is work in progress.
 
+Read the wiki! https://github.com/UCYT5040/hikari-duck/wiki
+
 Working example:
 ```py
 from hikariduck import duck
