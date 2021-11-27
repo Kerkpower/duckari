@@ -1,13 +1,13 @@
 # hikari-duck
 A Hikari command handler for people who love ducks.
 
-Currently Hikari Duck is work in progress.
+Currently Duckari is work in progress.
 
 Read the wiki! https://github.com/UCYT5040/hikari-duck/wiki
 
 Working example:
 ```py
-from hikariduck import duck
+from duckari import duck
 
 bot = duck.Bot(prefix="!") # prefix is None because we are only using slash commands
 
