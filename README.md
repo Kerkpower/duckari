@@ -12,7 +12,7 @@ bot = duck.Bot(prefix="!") # prefix is None because we are only using slash comm
 @bot.command()
 async def lol(ctx):
     await ctx.send("hi")
-token = "OTEzNDg2OTA2NTE0MzY2NDk1.YZ_M-g.-d4Ayr3eQFCL-GosACPC-cMrcKI"
+token = ""
 bot.run(token)
 ```
 
