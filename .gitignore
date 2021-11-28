@@ -41,3 +41,4 @@ bot_test.py
 
 # Mypy
 mypy_report/
+.mypy_cache/
