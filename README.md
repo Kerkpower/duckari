@@ -1,14 +1,14 @@
 # duckari
 
-A Hikari command handler for people who love ducks.
+A Hikari command handler made with love by ducks.
 
 Currently Duckari is work in progress.
 
 Documentation is WIP.
 
-The wiki is not longer used as documentation.
+The wiki is no longer used as documentation.
 
-Working example:
+NOT A Working example:
 
 ```py
 from duckari import duck
@@ -24,10 +24,7 @@ bot.run(token)
 
 ## Things that don't work yet
 
-- slash commands
-- ctx.say
-- ctx.reply
-- a lot of stuff
-- event listener
+- commands
+- everything other than listeners
 
 ### This is work in progress!
