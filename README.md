@@ -1,4 +1,4 @@
-# hikari-duck
+# duckari
 A Hikari command handler for people who love ducks.
 
 Currently Duckari is work in progress.
