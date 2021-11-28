@@ -1,11 +1,15 @@
 # duckari
+
 A Hikari command handler for people who love ducks.
 
 Currently Duckari is work in progress.
 
-Read the wiki! https://github.com/UCYT5040/hikari-duck/wiki
+Documentation is WIP.
+
+The wiki is not longer used as documentation.
 
 Working example:
+
 ```py
 from duckari import duck
 
