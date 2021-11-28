@@ -8,7 +8,7 @@ Documentation is WIP.
 
 The wiki is no longer used as documentation.
 
-NOT A Working example:
+NOT a Working example:
 
 ```py
 from duckari import duck
