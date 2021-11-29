@@ -17,10 +17,18 @@ class Duck:
         self._hikari_bot: t.Optional[hikari.GatewayBot] = None
         self._extra_kwargs: t.Dict[str, t.Any] = kwargs
         self._listeners: t.Dict[t.Type[hikari.Event], t.List[_ListenerT]] = collections.defaultdict(list)
+        self._commands: dict = {} # TODO: Add better type
 
     def listen(self, event: t.Type[hikari.Event]) -> t.Callable[[_ListenerT], _ListenerT]:
         def decorate(func: _ListenerT) -> _ListenerT:
             self._listeners[event].append(func)
+            return func
+
+        return decorate
+
+    def command(self, name: str = None): # TODO: Add return type
+        def decorate(func: _ListenerT) -> _ListenerT:
+            self._commands[name].append(func) # You can add multiple callbacks for a command.
             return func
 
         return decorate
@@ -31,7 +39,12 @@ class Duck:
         if event.message.author.is_bot:
             return
 
-        # Do command processing here :beanos:
+        if event.message.content.startswith(self._prefix):
+            content_without_prefix = event.message.content.replace(self._prefix, "", 1)
+            if content_without_prefix.split()[0] in self._commands.keys():
+                for callback in self._commands[content_without_prefix.split()[0]]:
+                    callback() # TODO: Add context
+            # TODO: Add command not found error
 
     def run(self, token: str, **kwargs: t.Any) -> None:
         self._hikari_bot = hikari.GatewayBot(token, intents=self._intents, **self._extra_kwargs)
