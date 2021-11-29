@@ -7,6 +7,14 @@ __all__ = ["Duck"]
 
 _ListenerT = t.Callable[[hikari.Event], t.Coroutine[t.Any, t.Any, None]]
 
+class Command():
+    def __init__(self, callback, name, aliases):
+        self.callback = callback
+        self.name = name
+        self.aliases = []
+        self.conditions = []
+    def add_alias(self, alias): self.aliases.append(alias)
+    def add_condition(self, condition): self.conditions.append(condition)
 
 class Duck:
     def __init__(
